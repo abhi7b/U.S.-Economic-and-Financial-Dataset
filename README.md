@@ -40,7 +40,9 @@ The analysis focuses on uncovering relationships between these variables through
 - **Time Series Modeling**: Perform ARIMA, VAR, or other models to forecast economic trends.  
 - **Cyclic Pattern Analysis**: Identify how economic shocks and recoveries impact key indicators.
 
+## Snap of Power Analysis
 <img width="468" alt="image" src="https://github.com/user-attachments/assets/1b40e0ca-7d2e-4fbc-8cfd-df3f09e4fdb8">
+To ensure sufficient power, the dataset covers last 50 years of monthly data i.e., around 600 entries. 
 
 ## Key Insights derived through EDA, time-series visualization, correlation analysis, and trend decomposition. 
 - **Interest Rate and Inflation Dynamics**: The interest Rate and inflation exhibit an inverse relationship, especially during periods of aggressive monetary tightening by the Federal Reserve.  
