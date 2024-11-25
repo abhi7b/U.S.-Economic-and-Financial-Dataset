@@ -63,3 +63,6 @@ This dataset and its analysis aim to provide insights into macroeconomic and fin
 - Missing values in GDP column were forward-filled, which might introduce bias. But GDP is calculated quarterly. 
 - S&P 500 data represents the stock market and may not capture broader financial market trends.
 
+## MIT License
+Copyright (c) 2024 Abhishek Bhatnagar
+
