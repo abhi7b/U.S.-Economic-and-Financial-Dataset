@@ -15,7 +15,7 @@ fred = Fred(api_key=FRED_API_KEY)
 
 
 def fetch_data(start_date, end_date):
-    """Fetch data from FRED and Yahoo Finance."""
+    """Fetch data from FRED and Yahoo Finance"""
     interest_rate = fred.get_series('FEDFUNDS', observation_start=start_date, observation_end=end_date)
     inflation = fred.get_series('CPIAUCSL')
     gdp = fred.get_series('GDPC1')
@@ -27,7 +27,7 @@ def fetch_data(start_date, end_date):
 
 
 def preprocess_data(interest_rate, inflation, gdp, unemployment, ind_prod, sp500):
-    """Preprocess data for analysis."""
+    """Preprocess data for analysis"""
     data = pd.DataFrame({
         'Interest_Rate': interest_rate,
         'Inflation': inflation,
@@ -49,7 +49,7 @@ def preprocess_data(interest_rate, inflation, gdp, unemployment, ind_prod, sp500
 
 
 def plot_correlation_matrix(merged_df):
-    """Plot the correlation matrix."""
+    """Plot the correlation matrix"""
     plt.figure(figsize=(10, 6))
     sns.heatmap(merged_df.corr(), annot=True, cmap='coolwarm')
     plt.title('Correlation Matrix of Variables')
@@ -57,7 +57,7 @@ def plot_correlation_matrix(merged_df):
 
 
 def plot_dual_axes(merged_df, col1, col2, col1_label, col2_label, title, col1_color, col2_color):
-    """Plot two variables on dual y-axes."""
+    """Plot two variables on dual y-axes"""
     fig, ax1 = plt.subplots(figsize=(12, 6))
     ax1.plot(merged_df.index, merged_df[col1], label=col1_label, color=col1_color)
     ax1.set_xlabel('Date')
@@ -73,7 +73,7 @@ def plot_dual_axes(merged_df, col1, col2, col1_label, col2_label, title, col1_co
 
 
 def seasonal_decompose_variable(data, column_name, model='multiplicative', period=12):
-    """Perform seasonal decomposition on a given variable."""
+    """Perform seasonal decomposition on a given variable"""
     result = seasonal_decompose(data[column_name], model=model, period=period)
     result.plot()
     plt.suptitle(f'Decomposition of {column_name}', fontsize=16, y=0.95)
@@ -82,7 +82,7 @@ def seasonal_decompose_variable(data, column_name, model='multiplicative', perio
 
 
 def main():
-    """Main function to execute the analysis."""
+    """Main function to execute the analysis"""
     # Fetch data
     end_date = datetime.datetime.today()
     start_date = end_date - datetime.timedelta(days=50 * 365)
